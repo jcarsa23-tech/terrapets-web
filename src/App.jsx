@@ -171,10 +171,10 @@ function App() {
             Tu veterinaria y tienda
           </p>
           <h2 className="max-w-2xl text-4xl font-black leading-tight md:text-5xl">
-            Agenda, compra y contáctanos desde una sola página
+            Atención profesional y nutrición animal todo en un solo lugar
           </h2>
           <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">
-            Servicios veterinarios, grooming, acupuntura y venta de accesorios y alimentos para tu mascota.
+            En Veterinaria TerraPets cuidamos la salud y el bienestar de tu mascota con experiencia y productos de calidad.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
