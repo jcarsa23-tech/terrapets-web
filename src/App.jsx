@@ -116,14 +116,27 @@ function App() {
     const lines = ['Hola, quiero hacer este pedido:', '', 'Productos:']
 
     if (cart.length === 0) {
-      lines.push('- Aún no hay productos en el carrito')
+      lines.push('- const lines = [
+  'Hola, quiero realizar un pedido en Veterinaria TerraPets.',
+  '',
+  'DATOS DEL CLIENTE',
+  `Nombre: ${customer.name || 'No indicado'}`,
+  `Teléfono: ${customer.phone || 'No indicado'}`,
+  `Tipo de entrega: ${customer.delivery || 'No indicado'}`,
+  `Dirección: ${customer.address || 'No indicada'}`,
+  `Notas: ${customer.notes || 'Sin notas'}`,
+  '',
+  'PRODUCTOS SOLICITADOS'
+])
     } else {
       cart.forEach((item) => {
         lines.push(`- ${item.name} x ${item.quantity} = ${currency(item.price * item.quantity)}`)
       })
     }
 
-    lines.push('', `Total: ${currency(totalPrice)}`, '', 'Datos del cliente:')
+    lines.push('')
+    lines.push('RESUMEN')
+    lines.push(`Total: ${currency(totalPrice)}`)
     lines.push(`Nombre: ${customer.name || 'No indicado'}`)
     lines.push(`Teléfono: ${customer.phone || 'No indicado'}`)
     lines.push(`Entrega: ${customer.delivery || 'No indicado'}`)
