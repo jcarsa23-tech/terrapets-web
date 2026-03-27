@@ -181,13 +181,13 @@ function App() {
               href="#servicios"
               className="rounded-2xl bg-white px-5 py-3 text-sm font-bold text-teal-700 transition hover:scale-[1.02]"
             >
-              Ver servicios
+              Agendar Cita
             </a>
             <a
               href="#productos"
               className="rounded-2xl border border-white/40 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
             >
-              Ver productos
+              Pedir por whatsApp
             </a>
           </div>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
