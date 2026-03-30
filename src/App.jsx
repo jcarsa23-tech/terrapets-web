@@ -112,40 +112,34 @@ function App() {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
-  const whatsappUrl = useMemo(() => {
-    const lines = ['Hola, quiero hacer este pedido:', '', 'Productos:']
+const whatsappUrl = useMemo(() => {
+  const lines = [
+    'Hola, quiero realizar un pedido en Veterinaria TerraPets.',
+    '',
+    'DATOS DEL CLIENTE',
+    `Nombre: ${customer.name || 'No indicado'}`,
+    `Teléfono: ${customer.phone || 'No indicado'}`,
+    `Tipo de entrega: ${customer.delivery || 'No indicado'}`,
+    `Dirección: ${customer.address || 'No indicada'}`,
+    `Notas: ${customer.notes || 'Sin notas'}`,
+    '',
+    'PRODUCTOS SOLICITADOS'
+  ]
 
-    if (cart.length === 0) {
-      lines.push('- const lines = [
-  'Hola, quiero realizar un pedido en Veterinaria TerraPets.',
-  '',
-  'DATOS DEL CLIENTE',
-  `Nombre: ${customer.name || 'No indicado'}`,
-  `Teléfono: ${customer.phone || 'No indicado'}`,
-  `Tipo de entrega: ${customer.delivery || 'No indicado'}`,
-  `Dirección: ${customer.address || 'No indicada'}`,
-  `Notas: ${customer.notes || 'Sin notas'}`,
-  '',
-  'PRODUCTOS SOLICITADOS'
-])
-    } else {
-      cart.forEach((item) => {
-        lines.push(`- ${item.name} x ${item.quantity} = ${currency(item.price * item.quantity)}`)
-      })
-    }
+  if (cart.length === 0) {
+    lines.push('- Aún no hay productos en el carrito')
+  } else {
+    cart.forEach((item) => {
+      lines.push(`- ${item.name} x ${item.quantity} = ${currency(item.price * item.quantity)}`)
+    })
+  }
 
-    lines.push('')
-    lines.push('RESUMEN')
-    lines.push(`Total: ${currency(totalPrice)}`)
-    lines.push(`Nombre: ${customer.name || 'No indicado'}`)
-    lines.push(`Teléfono: ${customer.phone || 'No indicado'}`)
-    lines.push(`Entrega: ${customer.delivery || 'No indicado'}`)
-    lines.push(`Dirección: ${customer.address || 'No indicada'}`)
-    lines.push(`Notas: ${customer.notes || 'Sin notas'}`)
+  lines.push('')
+  lines.push('RESUMEN')
+  lines.push(`Total: ${currency(totalPrice)}`)
 
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\\n'))}`
-  }, [cart, customer, totalPrice])
-
+  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(lines.join('\n'))}`
+}, [cart, customer, totalPrice])
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
