@@ -224,20 +224,25 @@ const whatsappUrl = useMemo(() => {
           <h2 className="mb-4 text-2xl font-black">Servicios</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <ServiceCard
-              title="Grooming"
-              text="Baño, corte y cuidado estético para tu mascota."
-              url={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20quiero%20agendar%20una%20cita%20de%20grooming`}
-            />
-            <ServiceCard
-              title="Consulta por cita"
-              text="Atención veterinaria profesional con previa cita."
-              url={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20quiero%20agendar%20una%20consulta%20veterinaria`}
-            />
-            <ServiceCard
-              title="Terapia con acupuntura"
-              text="Tratamientos alternativos para mejorar la salud de tu mascota."
-              url={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola,%20quiero%20agendar%20una%20terapia%20con%20acupuntura`}
-            />
+  title="🐶 Grooming"
+  text="Baño, grooming completo y cuidado estético para tu mascota."
+  url={`https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio%20de%20grooming%20para%20mi%20mascota`}
+/>
+
+<ServiceCard
+  title="🩺 Consulta Veterinaria"
+  text="Consulta general, valoración médica y terapias como acupuntura."
+  url={`https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta%20veterinaria%20para%20mi%20mascota`}
+/>
+
+<ServiceCard
+  title="🛒 Tienda"
+  text="Alimentos, arena y productos para el cuidado de tu mascota."
+  url={() => {
+    const tienda = document.getElementById("tienda");
+    if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
+  }}
+/>
             <div className="rounded-2xl bg-slate-50 p-4">
               <h3 className="text-lg font-bold">Venta de accesorios y alimentos</h3>
               <p className="mt-2 text-sm text-slate-600">
