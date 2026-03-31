@@ -50,10 +50,10 @@ const PRODUCTS = [
     description: 'Cómodo, ligero y fácil de ajustar.',
   },
 ]
-
+const WHATSAPP_CONSULTA = "50688097664"
 const WHATSAPP_NUMBER = '50683639767'
 const PHONE_NUMBER = '2102-9322'
-
+const whatsappConsultaUrl = "https://api.whatsapp.com/send?phone=50688097664&text=Hola%20quiero%20agendar%20una%20consulta%20en%20Veterinaria%20TerraPets.%0A%0ADATOS%20DEL%20CLIENTE%0ANombre:%0ATeléfono:%0A%0ADATOS%20DE%20LA%20MASCOTA%0ANombre%20de%20la%20mascota:%0AEspecie:%0AEdad:%0A%0AMOTIVO%20DE%20LA%20CONSULTA%0AServicio:%0AFecha%20deseada:%0AHora%20deseada:%0AMotivo:"
 function App() {
   const [cart, setCart] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('Todos')
