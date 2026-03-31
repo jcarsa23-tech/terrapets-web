@@ -184,12 +184,14 @@ const whatsappUrl = useMemo(() => {
             En Veterinaria TerraPets cuidamos la salud y el bienestar de tu mascota con experiencia y productos de calidad.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a
-              href="#servicios"
-              className="rounded-2xl bg-white px-5 py-3 text-sm font-bold text-teal-700 transition hover:scale-[1.02]"
-            >
-              Agendar Cita
-            </a>
+<a
+  href={whatsappConsultaUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="rounded-2xl bg-white px-5 py-3 text-sm font-bold text-teal-700 transition hover:scale-[1.02]"
+>
+  Agendar Cita
+</a>
             <a
               href="#productos"
               className="rounded-2xl border border-white/40 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
