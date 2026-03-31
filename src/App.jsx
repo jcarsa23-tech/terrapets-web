@@ -284,7 +284,7 @@ const whatsappUrl = useMemo(() => {
             </div>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <div id="tienda" className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {filteredProducts.map((product) => (
               <article
                 key={product.id}
