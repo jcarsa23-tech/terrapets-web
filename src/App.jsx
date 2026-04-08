@@ -223,33 +223,29 @@ const whatsappUrl = useMemo(() => {
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="mb-4 text-2xl font-black">Servicios</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <ServiceCard
+           <ServiceCard
   title="🐶 Grooming"
   text="Baño, grooming completo y cuidado estético para tu mascota."
-  url={`https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio%20de%20grooming%20para%20mi%20mascota`}
+  url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
+  image="/images/GROOMING.png"
 />
 
 <ServiceCard
   title="🩺 Consulta Veterinaria"
   text="Consulta general, valoración médica y terapias como acupuntura."
-  url={`https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta%20veterinaria%20para%20mi%20mascota`}
+  url="https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta"
+  image="/images/CONSULTA.png"
 />
 
-<div className="rounded-2xl bg-slate-50 p-4">
-  <h3 className="text-lg font-bold">🛒 Tienda</h3>
-  <p className="mt-2 text-sm text-slate-600">
-    Alimentos, arena y productos para el cuidado de tu mascota.
-  </p>
-  <button
-    onClick={() => {
-      const tienda = document.getElementById("tienda");
-      if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
-    }}
-    className="mt-4 w-full rounded-xl bg-teal-600 text-white py-2 font-semibold"
-  >
-    Ver productos
-  </button>
-</div>
+<ServiceCard
+  title="🛒 Tienda"
+  text="Alimentos, arena y productos para el cuidado de tu mascota."
+  image="/images/TIENDA.png"
+  onClick={() => {
+    const tienda = document.getElementById("tienda");
+    if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
+  }}
+/>
             
         
           </div>
@@ -431,21 +427,37 @@ const whatsappUrl = useMemo(() => {
   )
 }
 
-function ServiceCard({ title, text, url }) {
+function ServiceCard({ title, text, url, image, onClick }) {
+  const handleClick = () => {
+    if (onClick) return onClick();
+    if (url) window.open(url, "_blank");
+  };
+
   return (
-    <div className="rounded-2xl bg-slate-50 p-4">
-      <h3 className="text-lg font-bold">{title}</h3>
-      <p className="mt-2 text-sm text-slate-600">{text}</p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-3 inline-block rounded-xl bg-green-600 px-4 py-2 text-sm font-bold text-white"
-      >
-        Agenda tu cita ahora
-      </a>
+    <div
+      onClick={handleClick}
+      className="rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
+    >
+      {image && (
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-48 object-cover"
+        />
+      )}
+
+      <div className="p-4">
+        <h3 className="text-lg font-bold">{title}</h3>
+        <p className="mt-2 text-sm text-slate-600">{text}</p>
+
+        {url && (
+          <span className="inline-block mt-3 text-sm text-teal-600 font-semibold">
+            Agendar ahora →
+          </span>
+        )}
+      </div>
     </div>
-  )
+  );
 }
 
 export default App
