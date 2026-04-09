@@ -439,11 +439,11 @@ function ServiceCard({ title, text, url, image, onClick }) {
       className="rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
     >
       {image && (
-  <div className="w-full h-44 bg-white rounded-t-2xl overflow-hidden flex items-center justify-center">
+  <div className="w-full h-56 bg-white rounded-t-2xl overflow-hidden">
     <img
       src={image}
       alt={title}
-      className="max-w-full max-h-full object-contain"
+      className="w-full h-full object-cover"
     />
   </div>
 )}
