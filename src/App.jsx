@@ -1,7 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import groomingIcon from '../grooming.svg'
-import consultaIcon from '../consulta.svg'
-import tiendaIcon from '../tienda.svg'
+
 const PRODUCTS = [
   {
     id: 1,
@@ -229,20 +227,20 @@ const whatsappUrl = useMemo(() => {
   title="🐶 Grooming"
   text="Baño, grooming completo y cuidado estético para tu mascota."
   url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
-  image={groomingIcon}
+  image: '/images/grooming.jpg'
 />
 
 <ServiceCard
   title="🩺 Consulta Veterinaria"
   text="Consulta general, valoración médica y terapias como acupuntura."
   url="https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta"
-  image={consultaIcon}
+  image: '/images/clinica.jpg'
 />
 
 <ServiceCard
   title="🛒 Tienda"
   text="Alimentos, arena y productos para el cuidado de tu mascota."
-  image={tiendaIcon}
+  image: '/images/tienda.jpg'
   onClick={() => {
     const tienda = document.getElementById("tienda");
     if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
@@ -441,12 +439,14 @@ function ServiceCard({ title, text, url, image, onClick }) {
       className="rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
     >
       {image && (
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-48 object-cover"
-        />
-      )}
+  <div className="w-full h-44 bg-white rounded-t-2xl overflow-hidden flex items-center justify-center">
+    <img
+      src={image}
+      alt={title}
+      className="max-w-full max-h-full object-contain"
+    />
+  </div>
+)}
 
       <div className="p-4">
         <h3 className="text-lg font-bold">{title}</h3>
