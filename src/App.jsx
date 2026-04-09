@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+  import React, { useMemo, useState } from 'react'
 
 const PRODUCTS = [
   {
@@ -439,7 +439,7 @@ function ServiceCard({ title, text, url, image, onClick }) {
       className="rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
     >
       {image && (
-  <div className="w-full h-56 bg-white rounded-t-2xl overflow-hidden">
+  <div className="w-full h-40 bg-white rounded-t-2xl overflow-hidden">
     <img
       src={image}
       alt={title}
