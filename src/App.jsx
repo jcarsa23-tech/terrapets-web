@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from 'react'
-
+import groomingIcon from './grooming.svg'
+import consultaIcon from './consulta.svg'
+import tiendaIcon from './tienda.svg'
 const PRODUCTS = [
   {
     id: 1,
@@ -227,20 +229,20 @@ const whatsappUrl = useMemo(() => {
   title="🐶 Grooming"
   text="Baño, grooming completo y cuidado estético para tu mascota."
   url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
-  image="/grooming.svg"
+  image={groomingIcon}
 />
 
 <ServiceCard
   title="🩺 Consulta Veterinaria"
   text="Consulta general, valoración médica y terapias como acupuntura."
   url="https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta"
-  image="/consulta.svg"
+  image={consultaIcon}
 />
 
 <ServiceCard
   title="🛒 Tienda"
   text="Alimentos, arena y productos para el cuidado de tu mascota."
-  image="/tienda.svg"
+  image={tiendaIcon}
   onClick={() => {
     const tienda = document.getElementById("tienda");
     if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
