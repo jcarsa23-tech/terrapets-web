@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import groomingIcon from '../grooming.svg'
-import consultaIcon from './consulta.svg'
+import consultaIcon from '../consulta.svg'
 import tiendaIcon from './tienda.svg'
 const PRODUCTS = [
   {
