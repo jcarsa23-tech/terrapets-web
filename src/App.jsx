@@ -441,10 +441,10 @@ function ServiceCard({ title, text, url, image, onClick }) {
       {image && (
   <div className="w-full h-32 bg-white rounded-t-2xl overflow-hidden">
     <img
-      src={image}
-      alt={title}
-      className="w-full h-full object-contain bg-gray-50
-    />
+  src={image}
+  alt={title}
+  className="w-full h-full object-contain bg-gray-50"
+/>
   </div>
 )}
 
