@@ -443,7 +443,7 @@ function ServiceCard({ title, text, url, image, onClick }) {
     <img
       src={image}
       alt={title}
-      className="w-full h-full object-contain bg-gray-50 p-2"
+      className="w-full h-full object-contain bg-gray-50
     />
   </div>
 )}
