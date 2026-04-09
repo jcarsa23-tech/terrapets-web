@@ -254,7 +254,7 @@ const whatsappUrl = useMemo(() => {
         </div>
       </section>
 
-      <main className="mx-auto grid max-w-7xl gap-8 px-4 pb-12 md:grid-cols-[1.45fr_0.55fr] md:px-8">
+      <main className="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-32 md:grid-cols-[1.45fr_0.55fr] md:px-8">
         <section id="productos" className="space-y-6">
           <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
