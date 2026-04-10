@@ -227,20 +227,20 @@ const whatsappUrl = useMemo(() => {
   title="🐶 Grooming"
   text="Baño, grooming completo y cuidado estético para tu mascota."
   url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
-  image="/images/grooming.jpg"
+  image="/images/grooming.png"
 />
 
 <ServiceCard
   title="🩺 Consulta Veterinaria"
   text="Consulta general, valoración médica y terapias como acupuntura."
   url="https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta"
-  image="/images/clinica.jpg"
+  image="/images/clinica.png"
 />
 
 <ServiceCard
   title="🛒 Tienda"
   text="Alimentos, arena y productos para el cuidado de tu mascota."
-  image="/images/tienda.jpg"
+  image="/images/tienda.png"
   onClick={() => {
     const tienda = document.getElementById("tienda");
     if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
