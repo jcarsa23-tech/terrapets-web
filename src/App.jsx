@@ -430,36 +430,35 @@ const whatsappUrl = useMemo(() => {
   )
 }
 
-function ServiceCard({ title, text, url, image, onClick }) {
+function ServiceCard({ title, text, image, url, onClick }) {
   const handleClick = () => {
     if (onClick) return onClick();
     if (url) window.open(url, "_blank");
   };
 
   return (
-    <div
-      onClick={handleClick}
-      className="rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
-    >
-      {image && (
-  <div className="w-full h-32 bg-white rounded-t-2xl overflow-hidden">
-    <img
-  src={image}
-  alt={title}
-  className="w-full h-full object-contain bg-gray-50"
-/>
-  </div>
-)}
+    <div onClick={handleClick} className="group cursor-pointer">
+      <div className="flex items-center overflow-hidden rounded-full bg-white shadow-md transition-all duration-500 hover:shadow-xl w-24 hover:w-[620px]">
+        <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full border-4 border-white shadow-sm">
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover"
+          />
+        </div>
 
-      <div className="p-3">
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p className="mt-2 text-sm text-slate-600">{text}</p>
+        <div className="max-w-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:ml-4 group-hover:max-w-[460px] group-hover:opacity-100">
+          <div className="pr-6">
+            <h3 className="text-lg font-bold text-slate-900">{title}</h3>
+            <p className="mt-1 text-sm text-slate-600">{text}</p>
 
-        {url && (
-          <span className="inline-block mt-3 text-sm text-teal-600 font-semibold">
-            Agendar ahora →
-          </span>
-        )}
+            {(url || onClick) && (
+              <span className="mt-2 inline-block text-sm font-semibold text-teal-600">
+                Ver más →
+              </span>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
