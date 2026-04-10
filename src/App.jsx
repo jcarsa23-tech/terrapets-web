@@ -225,7 +225,7 @@ const whatsappUrl = useMemo(() => {
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <div className="mt-8 flex flex-col gap-6">
 <ServiceCard
-  title="🐶 Grooming"
+  title="Grooming"
   text="Baño, grooming completo y cuidado estético para tu mascota."
   url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
   image="/images/grooming.png"
