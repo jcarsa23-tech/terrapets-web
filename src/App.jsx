@@ -223,7 +223,8 @@ const whatsappUrl = useMemo(() => {
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="mb-4 text-2xl font-black">Servicios</h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-           <ServiceCard
+          <div className="mt-8 flex flex-col gap-6">
+<ServiceCard
   title="🐶 Grooming"
   text="Baño, grooming completo y cuidado estético para tu mascota."
   url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
@@ -244,6 +245,11 @@ const whatsappUrl = useMemo(() => {
   onClick={() => {
     const tienda = document.getElementById("tienda");
     if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
+  }}
+/>
+  
+
+</div>
   }}
 />
             
