@@ -219,46 +219,41 @@ const whatsappUrl = useMemo(() => {
         </div>
       </section>
 
-      <section id="servicios" className="mx-auto max-w-7xl px-4 pb-10 md:px-8">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-4 text-2xl font-black">Servicios</h2>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-</div>
+     <section id="servicios" className="mx-auto max-w-7xl px-4 pb-10 md:px-8">
+  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    
+    <h2 className="mb-4 text-2xl font-black">Servicios</h2>
 
-<div className="mt-8 flex flex-col gap-6">
-<ServiceCard
-  title="Grooming"
-  text="Baño, grooming completo y cuidado estético para tu mascota."
-  url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
-  image="/images/grooming.png"
-/>
+    <div className="mt-8 flex flex-col gap-6">
 
-<ServiceCard
-  title="🩺 Consulta Veterinaria"
-  text="Consulta general, valoración médica y terapias como acupuntura."
-  url="https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta"
-  image="/images/clinica.png"
-/>
+      <ServiceCard
+        title="Grooming"
+        text="Baño, grooming completo y cuidado estético para tu mascota."
+        url="https://wa.me/50683639767?text=Hola,%20quiero%20agendar%20un%20servicio"
+        image="/images/grooming.png"
+      />
 
-<ServiceCard
-  title="🛒 Tienda"
-  text="Alimentos, arena y productos para el cuidado de tu mascota."
-  image="/images/tienda.png"
-  onClick={() => {
-    const tienda = document.getElementById("tienda");
-    if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
-  }}
-/>
-  
+      <ServiceCard
+        title="Consulta Veterinaria"
+        text="Consulta general, valoración médica y terapias como acupuntura."
+        url="https://wa.me/50688097664?text=Hola,%20quiero%20agendar%20una%20consulta"
+        image="/images/clinica.png"
+      />
 
-</div>
-  }}
-/>
-            
-        
-          </div>
-        </div>
-      </section>
+      <ServiceCard
+        title="Tienda"
+        text="Alimentos, arena y productos para el cuidado de tu mascota."
+        image="/images/tienda.png"
+        onClick={() => {
+          const tienda = document.getElementById("tienda");
+          if (tienda) tienda.scrollIntoView({ behavior: "smooth" });
+        }}
+      />
+
+    </div>
+
+  </div>
+</section>
 
       <main className="mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-32 md:grid-cols-[1.45fr_0.55fr] md:px-8">
         <section id="productos" className="space-y-6">
